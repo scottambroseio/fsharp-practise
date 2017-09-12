@@ -10,10 +10,11 @@ let printArray arr =
   printArrayInner arr
 
 let doubleList list = List.map (fun x -> x * 2) list
+let quadrupleList = (doubleList >> doubleList)
 
 input
   |> printArray
   |> doubleList
   |> printArray
-  |> (doubleList >> doubleList)
+  |> quadrupleList
   |> printArray
